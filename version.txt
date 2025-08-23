@@ -1,4 +1,0 @@
-FileVersion=3.0.0
-ProductName=PrivGuard
-CompanyName=Jaeden Hommel
-FileDescription=PrivGuard - Sichere Dateiverschlüsselung
