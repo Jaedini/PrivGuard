@@ -10,7 +10,8 @@
   <img src="https://img.shields.io/badge/Platform-Windows-blue?style=flat-square" />
 </p>
 
----  
+---
+
 <p align="center">
   <img src="assets/Screenshot.png" alt="PrivGuard UI" width="700"/>
 </p>
@@ -42,8 +43,6 @@
 ##  Release Notes
 🚀 v3.0.0
 
-- ✅ Neues Recovery-System mit Salt-Datei
-
 - ✅ Überarbeitete GUI (Dark Mode + Log Panel)
 
 - ✅ Installer über Inno Setup
@@ -53,9 +52,6 @@
 ---
 
 ##  FAQ
-
-**❓ Kann ich verschlüsselte Dateien wiederherstellen, wenn ich mein Passwort verliere?**  
-➡️ Nur wenn du die Salt-Datei gesichert hast. Ohne Passwort + Salt-Datei ist eine Wiederherstellung unmöglich.  
 
 **❓ Ist PrivGuard Open Source?**  
 ➡️ Ja, lizenziert unter MIT.  
@@ -106,5 +102,3 @@ Siehe [LICENSE](LICENSE) für weitere Informationen.
 **Mit PyInstaller**
 ```bash
 pyinstaller --noconsole --onefile --name PrivGuard src/main.py
-
-
