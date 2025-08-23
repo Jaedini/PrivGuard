@@ -58,6 +58,8 @@
 2. Führe den Installer aus  
 3. Starte PrivGuard über Startmenü oder Desktop-Icon  
 
+---
+
 🐍 Entwickler-Setup
 ```bash
 git clone https://github.com/Jaedini/PrivGuard.git
@@ -139,5 +141,6 @@ Jaeden Hommel – [GitHub](https://github.com/Jaedini)
 ---
 
 🐙[GitHub Issues](https://github.com/Jaedini/PrivGuard/issues)
+
 
 
