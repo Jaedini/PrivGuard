@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <b> Moderne Dateiverschlüsselung mit Recovery-System, Dark Mode & Installer</b>
+  <b> Moderne Dateiverschlüsselung mit Dark Mode & Installer</b>
 </p>
 
 ---
@@ -102,3 +102,4 @@ Siehe [LICENSE](LICENSE) für weitere Informationen.
 **Mit PyInstaller**
 ```bash
 pyinstaller --noconsole --onefile --name PrivGuard src/main.py
+
