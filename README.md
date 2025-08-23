@@ -51,7 +51,7 @@ python main.py
 
 ---
 
-## 📸 Screenshots
+**##** 📸 Screenshots
 <p align="center"> <img src="assets/screenshot.png" alt="PrivGuard UI" width="700"/> </p>
 
 ---
@@ -122,3 +122,4 @@ Sende eine E-Mail an:
 ## 📜 Lizenz
 Dieses Projekt ist unter der **MIT Lizenz** veröffentlicht.  
 Siehe [LICENSE.md](LICENSE.md) für weitere Informationen.
+
