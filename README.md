@@ -41,6 +41,79 @@
 
 ---
 
+## 📸 Screenshots
+<p align="center"> <img src="assets/screenshot.png" alt="PrivGuard UI" width="700"/> </p>
+
+---
+
+## 📦 Build
+**Mit PyInstaller**
+```bash
+pyinstaller --noconsole --onefile --name PrivGuard src/main.py
+
+## Installer erstellen (Inno Setup)
+1. Lade [Inno Setup](https://jrsoftware.org/isinfo.php) herunter
+2. Öffne setup/privguard.iss
+3. Klicke auf **Build Installer**
+
+---
+
+## 📢 Release Notes
+🚀 v3.0.0
+
+- ✅ Neues Recovery-System mit Salt-Datei
+
+- ✅ Überarbeitete GUI (Dark Mode + Log Panel)
+
+- ✅ Installer über Inno Setup
+
+- ✅ Neue Projektstruktur (src/, tests/, docs/)
+
+---
+
+## ❓ FAQ
+
+**❓ Kann ich verschlüsselte Dateien wiederherstellen, wenn ich mein Passwort verliere?**  
+➡️ Nur wenn du die Salt-Datei gesichert hast. Ohne Passwort + Salt-Datei ist eine Wiederherstellung unmöglich.  
+
+**❓ Ist PrivGuard Open Source?**  
+➡️ Ja, lizenziert unter MIT.  
+
+**❓ Wo finde ich die Logs?**  
+➡️ `%APPDATA%/PrivGuard/privguard.log`  
+
+---
+
+## 🔒 Security Policy
+
+Melde Sicherheitsprobleme **nicht** öffentlich im Issue Tracker.  
+Sende eine E-Mail an:  
+📧 [privguardsupport@protonmail.com](mailto:privguardsupport@protonmail.com)  
+
+---
+
+## 👨‍💻 Maintainer
+**Jaeden Hommel** – [GitHub](https://github.com/Jaedini)  
+
+---
+
+## 📬 Kontakt
+📧 [privguardsupport@protonmail.com](mailto:privguardsupport@protonmail.com)  
+
+---
+
+## 🐙 GitHub
+- 👉 [GitHub Issues](https://github.com/Jaedini/PrivGuard/issues)  
+- 👉 [Releases](https://github.com/Jaedini/PrivGuard/releases)  
+- 👉 [Pull Requests](https://github.com/Jaedini/PrivGuard/pulls)  
+
+---
+
+## 📜 Lizenz
+Dieses Projekt ist unter der **MIT Lizenz** veröffentlicht.  
+Siehe [LICENSE.md](LICENSE.md) für weitere Informationen.
+
+
 ## 🔧 Entwickler-Setup
 
 ```bash
@@ -48,3 +121,4 @@ git clone https://github.com/Jaedini/PrivGuard.git
 cd PrivGuard
 pip install -r requirements.txt
 python main.py
+
