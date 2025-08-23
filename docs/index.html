@@ -1,78 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>PrivGuard Installer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PrivGuard – Deine sichere Lösung für Dateiverschlüsselung. Kostenlos, Open Source & einfach zu bedienen." />
+  <title>PrivGuard – Security made simple</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #000000;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    #header {
-      background: #003366;
-      color: #ffffff;
-      padding: 10px;
-      text-align: left;
+    body {
+      font-family: 'Fira Code', monospace;
+      background: radial-gradient(circle at top, #0a0f1e, #000);
+      color: #d1d1d1;
+      overflow-x: hidden;
     }
-    #header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
-    #content {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 10px;
-    }
-    h2 {
-      font-size: 18px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    a.download {
-      display: inline-block;
-      background: #003366;
-      color: #fff;
-      text-decoration: none;
-      padding: 6px 12px;
-      border: 1px solid #000;
-    }
-    a.download:hover {
-      background: #0055aa;
-    }
-    #footer {
-      margin-top: 40px;
-      padding: 10px;
-      font-size: 12px;
-      border-top: 1px solid #ccc;
+    header {
       text-align: center;
-      color: #444;
+      padding: 80px 20px 40px;
+      animation: fadeIn 1.5s ease;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #00ff9c;
+      text-shadow: 0 0 15px #00ff9c, 0 0 25px #008f6e;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #aaa;
+    }
+    .btn-download {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: linear-gradient(45deg, #00ff9c, #008f6e);
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00ff9c;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-download:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ff9c, 0 0 45px #008f6e;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+      animation: slideUp 1.2s ease;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00e6e6;
+      text-shadow: 0 0 10px #00e6e6, 0 0 20px #008f8f;
+    }
+    section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #bbb;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .feature {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 255, 156, 0.2);
+      box-shadow: 0 0 15px rgba(0, 255, 156, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 156, 0.3);
+    }
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #00ff9c;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #666;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #00ff9c;
+      text-decoration: none;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Matrix Animation Background */
+    #matrix {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: black;
     }
   </style>
 </head>
 <body>
-  <div id="header">
+  <canvas id="matrix"></canvas>
+
+  <header>
     <h1>PrivGuard</h1>
-  </div>
+    <p>Schütze deine Daten mit moderner Verschlüsselung – Open Source & frei</p>
+    <a href="https://github.com/Jaedini/PrivGuard/releases/download/v3.0.0/PrivGuard_Setup.exe" class="btn-download">⬇️ Download Installer</a>
+  </header>
 
-  <div id="content">
-    <h2>Download</h2>
-    <p>
-      Latest version: <strong>1.0</strong><br>
-      <a class="download" href="PrivGuard_Setup.exe">Download Installer</a>
-    </p>
+  <section>
+    <h2>Features</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>🔒 Starke Verschlüsselung</h3>
+        <p>Deine Dateien werden mit modernsten Algorithmen geschützt.</p>
+      </div>
+      <div class="feature">
+        <h3>⚡ Einfache Bedienung</h3>
+        <p>Minimalistische, intuitive Oberfläche – auch für Einsteiger.</p>
+      </div>
+      <div class="feature">
+        <h3>🖥️ Log Panel</h3>
+        <p>Behalte den Überblick über alle Aktionen in Echtzeit.</p>
+      </div>
+    </div>
+  </section>
 
-    <h2>About</h2>
-    <p>
-      PrivGuard is a lightweight tool for privacy protection.
-      This site only hosts the official installer.
-    </p>
-  </div>
+  
 
-  <div id="footer">
-    &copy; 2025 Jaeden Hommel &middot; <a href="https://github.com/Jaedini/PrivGuard">GitHub Repository</a>
-  </div>
+  <footer>
+    <p>© 2025 PrivGuard • <a href="https://github.com/Jaedini/PrivGuard">GitHub Repo</a> • <a href="LICENSE.md">MIT License</a></p>
+  </footer>
+
+  <!-- Matrix Animation Script -->
+  <script>
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array.from({length: columns}).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#00ff9c";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 33);
+  </script>
 </body>
 </html>
