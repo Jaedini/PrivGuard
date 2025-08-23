@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/github/stars/Jaedini/PrivGuard?style=flat-square&logo=github" />
   <img src="https://img.shields.io/github/forks/Jaedini/PrivGuard?style=flat-square" />
   <img src="https://img.shields.io/github/issues/Jaedini/PrivGuard?style=flat-square" />
-  <img src="https://img.shields.io/github/license/Jaedini/PrivGuard?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" />
   <img src="https://img.shields.io/badge/Status-Stable-brightgreen?style=flat-square" />
   <img src="https://img.shields.io/badge/Platform-Windows-blue?style=flat-square" />
 </p>
@@ -106,4 +106,5 @@ Siehe [LICENSE](LICENSE) für weitere Informationen.
 **Mit PyInstaller**
 ```bash
 pyinstaller --noconsole --onefile --name PrivGuard src/main.py
+
 
