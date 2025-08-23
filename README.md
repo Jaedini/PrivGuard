@@ -65,8 +65,12 @@ cd PrivGuard
 pip install -r requirements.txt
 python main.py
 
+---
+
 📸 Screenshots
 <p align="center"> <img src="assets/screenshot.png" alt="PrivGuard UI" width="700"/> </p>
+
+---
 
 🧪 Tests
 ```bash
@@ -81,12 +85,16 @@ Installer erstellen (Inno Setup)
 2. Öffne setup/privguard.iss
 3. Klicke auf Build Installer
 
+---
+
 📢 Release Notes
 🚀 v3.0.0
 ✅ Neues Recovery-System mit Salt-Datei
 ✅ Überarbeitete GUI (Dark Mode + Log Panel) 
 ✅ Installer über Inno Setup
 ✅ Neue Projektstruktur (src/, tests/, docs/)
+
+---
 
 🗺️ Roadmap
  macOS & Linux Support (AppImage, dmg)
@@ -96,6 +104,8 @@ Installer erstellen (Inno Setup)
  Portable Version ohne Installation
 
  Multi-Language Support (Deutsch, Englisch, Französisch)
+
+---
 
  ❓ FAQ
 
@@ -108,17 +118,26 @@ Installer erstellen (Inno Setup)
 ❓ Wo finde ich die Logs?
 ➡️ %APPDATA%/PrivGuard/privguard.log
 
+---
+
 🔒 Security Policy
 
 Melde Sicherheitsprobleme **nicht** öffentlich im Issue Tracker.
 Sende eine E-Mail an: [privguardsupport@protonmail.com](mailto:privguardsupport@protonmail.com)
 
+---
+
 👨‍💻 Maintainer
 
 Jaeden Hommel – [GitHub](https://github.com/Jaedini)
 
+---
+
 📬 Kontakt
 📧[privguardsupport@protonmail.com](mailto:privguardsupport@protonmail.com)
 
+---
+
 🐙[GitHub Issues](https://github.com/Jaedini/PrivGuard/issues)
+
 
