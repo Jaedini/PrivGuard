@@ -48,8 +48,3 @@ git clone https://github.com/Jaedini/PrivGuard.git
 cd PrivGuard
 pip install -r requirements.txt
 python main.py
-
----
-
-
-
