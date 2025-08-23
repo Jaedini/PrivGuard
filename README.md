@@ -1,58 +1,49 @@
 🔐 PrivGuard v3.0
 
-PrivGuard ist ein modernes Open-Source-Tool zur **lokalen Verschlüsselung von Dateien und Ordnern** mit einer benutzerfreundlichen, modernen GUI.
-
-[![GitHub release](https://img.shields.io/github/v/release/Jaedini/PrivGuard?style=for-the-badge)](https://github.com/Jaedini/PrivGuard/releases)
-[![License](https://img.shields.io/github/license/Jaedini/PrivGuard?style=for-the-badge)](LICENSE)
-[![Downloads](https://img.shields.io/github/downloads/Jaedini/PrivGuard/total?style=for-the-badge)](https://github.com/Jaedini/PrivGuard/releases)
-[![Issues](https://img.shields.io/github/issues/Jaedini/PrivGuard?style=for-the-badge)](https://github.com/Jaedini/PrivGuard/issues)
+**PrivGuard** ist ein Open-Source-Tool zur sicheren Dateiverschlüsselung mit moderner GUI.  
+Es richtet sich an Entwickler, Security-Interessierte und alle, die ihre Daten zuverlässig schützen möchten.
 
 ---
 
 ✨ Features
-
-- 🔒 **AES256 Verschlüsselung** mit PBKDF2 Key-Derivation  
-- 💾 **Backup-Funktion** vor jeder Verschlüsselung  
-- ⚡ **Rekursive Verschlüsselung** mit 3-stufiger Sicherheitswarnung  
-- 🖥️ Intuitive moderne **GUI (PySide6 / Qt)**  
-- 🛡️ **Recovery-Mechanismus** mit Salt-Datei  
-- 📜 **Log-System** (lokal gespeichert in `%APPDATA%\PrivGuard\privguard.log`)  
-
----
-
-📸 Screenshots
-
-*(Hier kannst du echte Screenshots einfügen – z. B. GUI im Light/Dark-Mode)*
-
-<img src="assets/screenshot.png" width="600">
+- AES-256 Verschlüsselung (PBKDF2 Key-Derivation, HMAC-Integrity)
+- Backup-Funktion vor jeder Verschlüsselung
+- Rekursive Verschlüsselung mit zusätzlicher Sicherheitswarnung
+- Moderne, minimalistische GUI (PySide6)
+- Recovery via Salt-Datei
+- Logging aller Operationen
 
 ---
 
-📥 Installation
+📦 Installation
 
-Windows (empfohlen)
-
-1. Lade die neueste Version herunter:  
-   👉 [**PrivGuard Installer v3.0**](https://github.com/Jaedini/PrivGuard/releases/latest)
+1. Lade den Installer herunter:  
+   👉 [PrivGuard Installer v3.0](https://DEINNAME.github.io/PrivGuard/PrivGuardInstaller.exe)
 
 2. Führe den Installer aus.
 
-3. Starte **PrivGuard** über das Startmenü oder das Desktop-Symbol.
+3. Starte PrivGuard über Desktop-Icon oder Startmenü.
 
-Manuelle Installation (Entwickler)
+---
+
+🖥️ Screenshots
+![PrivGuard GUI](assets/screenshot.png)
+
+---
+
+🚀 Development Setup
 
 ```bash
-# Repository klonen
-git clone https://github.com/DEIN-USERNAME/PrivGuard.git
+# Repo klonen
+git clone https://github.com/DEINNAME/PrivGuard.git
 cd PrivGuard
 
-# Virtuelle Umgebung erstellen
-python -m venv .venv
-source .venv/bin/activate   # Linux / macOS
-.venv\Scripts\activate      # Windows
+# Virtuelle Umgebung
+python -m venv venv
+source venv/bin/activate  # (Windows: venv\Scripts\activate)
 
-# Abhängigkeiten installieren
+# Dependencies
 pip install -r requirements.txt
 
-# Anwendung starten
-python PrivGuard.py
+# Start
+python privguard.py
