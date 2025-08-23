@@ -1,4 +1,4 @@
-# 🔐 PrivGuard  
+# PrivGuard  
 
 
 <p align="center">
@@ -16,12 +16,12 @@
 </p>
 
 <p align="center">
-  <b>🔒 Moderne Dateiverschlüsselung mit Recovery-System, Dark Mode & Installer</b>
+  <b> Moderne Dateiverschlüsselung mit Recovery-System, Dark Mode & Installer</b>
 </p>
 
 ---
 
-## 🚀 Features
+##  Features
 - 🔑 AES-Verschlüsselung mit **Salt-Datei**  
 - 🌙 Dunkles UI + **Log Panel**  
 - 💻 Einfache Bedienung, moderne GUI (PyQt)  
@@ -31,21 +31,21 @@
 
 ---
 
-## 📥 Installation
+##  Installation
 
-### 🪟 Windows (Empfohlen)
+###  Windows (Empfohlen)
 1. Lade den 👉 [PrivGuard Installer v3.0](https://github.com/Jaedini/PrivGuard/releases) herunter  
 2. Führe den Installer aus  
 3. Starte PrivGuard über Startmenü oder Desktop-Icon  
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 <p align="center"> <img src="assets/screenshot.png" alt="PrivGuard UI" width="700"/> </p>
 
 ---
 
-## 📦 Build
+##  Build
 **Mit PyInstaller**
 ```bash
 pyinstaller --noconsole --onefile --name PrivGuard src/main.py
@@ -57,7 +57,7 @@ pyinstaller --noconsole --onefile --name PrivGuard src/main.py
 
 ---
 
-## 📢 Release Notes
+##  Release Notes
 🚀 v3.0.0
 
 - ✅ Neues Recovery-System mit Salt-Datei
@@ -70,56 +70,57 @@ pyinstaller --noconsole --onefile --name PrivGuard src/main.py
 
 ---
 
-## ❓ FAQ
+##  FAQ
 
-**❓ Kann ich verschlüsselte Dateien wiederherstellen, wenn ich mein Passwort verliere?**  
+** Kann ich verschlüsselte Dateien wiederherstellen, wenn ich mein Passwort verliere?**  
 ➡️ Nur wenn du die Salt-Datei gesichert hast. Ohne Passwort + Salt-Datei ist eine Wiederherstellung unmöglich.  
 
-**❓ Ist PrivGuard Open Source?**  
+** Ist PrivGuard Open Source?**  
 ➡️ Ja, lizenziert unter MIT.  
 
-**❓ Wo finde ich die Logs?**  
+** Wo finde ich die Logs?**  
 ➡️ `%APPDATA%/PrivGuard/privguard.log`  
 
 ---
 
-## 🔒 Security Policy
+##  Security Policy
 
 Melde Sicherheitsprobleme **nicht** öffentlich im Issue Tracker.  
 Sende eine E-Mail an:  
-📧 [privguardsupport@protonmail.com](mailto:privguardsupport@protonmail.com)  
+ [privguardsupport@protonmail.com](mailto:privguardsupport@protonmail.com)  
 
 ---
 
-## 👨‍💻 Maintainer
+##  Maintainer
 **Jaeden Hommel** – [GitHub](https://github.com/Jaedini)  
 
 ---
 
-## 📬 Kontakt
-📧 [privguardsupport@protonmail.com](mailto:privguardsupport@protonmail.com)  
+##  Kontakt
+ [privguardsupport@protonmail.com](mailto:privguardsupport@protonmail.com)  
 
 ---
 
-## 🐙 GitHub
+##  GitHub
 - 👉 [GitHub Issues](https://github.com/Jaedini/PrivGuard/issues)  
 - 👉 [Releases](https://github.com/Jaedini/PrivGuard/releases)  
 - 👉 [Pull Requests](https://github.com/Jaedini/PrivGuard/pulls)  
 
 ---
 
-## 📜 Lizenz
+##  Lizenz
 Dieses Projekt ist unter der **MIT Lizenz** veröffentlicht.  
 Siehe [LICENSE.md](LICENSE.md) für weitere Informationen.
 
 
-## 🔧 Entwickler-Setup
+##  Entwickler-Setup
 
 ```bash
 git clone https://github.com/Jaedini/PrivGuard.git
 cd PrivGuard
 pip install -r requirements.txt
 python main.py
+
 
 
 
