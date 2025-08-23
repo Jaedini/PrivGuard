@@ -12,7 +12,7 @@
 
 ---  
 <p align="center">
-  <img src="assets/screenshot.png" alt="PrivGuard UI" width="700"/>
+  <img src="assets/Screenshot.png" alt="PrivGuard UI" width="700"/>
 </p>
 
 <p align="center">
@@ -120,5 +120,6 @@ git clone https://github.com/Jaedini/PrivGuard.git
 cd PrivGuard
 pip install -r requirements.txt
 python main.py
+
 
 
