@@ -26,8 +26,7 @@
 - 🔑 AES-Verschlüsselung mit **Salt-Datei**  
 - 🌙 Dunkles UI + **Log Panel**  
 - 💻 Einfache Bedienung, moderne GUI (PyQt)  
-- 🛠️ Installer via **Inno Setup**  
-- 📦 Portable Version optional  
+- 🛠️ Installer via **Inno Setup**   
 - 🌍 Multi-Language (Deutsch, Englisch, Französisch, bald mehr)  
 
 ---
@@ -102,4 +101,5 @@ Siehe [LICENSE](LICENSE) für weitere Informationen.
 **Mit PyInstaller**
 ```bash
 pyinstaller --noconsole --onefile --name PrivGuard src/main.py
+
 
