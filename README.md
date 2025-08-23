@@ -92,7 +92,7 @@ Sende eine E-Mail an:
 
 ##  Lizenz
 Dieses Projekt ist unter der **MIT Lizenz** veröffentlicht.  
-Siehe [LICENSE.md](LICENSE.md) für weitere Informationen.
+Siehe [LICENSE](LICENSE) für weitere Informationen.
 
 ---
 
@@ -106,3 +106,4 @@ Siehe [LICENSE.md](LICENSE.md) für weitere Informationen.
 **Mit PyInstaller**
 ```bash
 pyinstaller --noconsole --onefile --name PrivGuard src/main.py
+
