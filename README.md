@@ -1,4 +1,4 @@
-# PrivGuard
+# PrivGuard - Enterprise Security
 
 <p align="center">
   <img src="https://img.shields.io/github/stars/Jaedini/PrivGuard?style=flat-square&logo=github" />
@@ -74,3 +74,4 @@ Sende stattdessen eine E-Mail an:
 ## Lizenz
 Dieses Projekt ist unter der **MIT Lizenz** veröffentlicht.  
 Siehe [LICENSE](LICENSE) für weitere Informationen.
+
