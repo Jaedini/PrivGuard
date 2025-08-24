@@ -1,199 +1,226 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PrivGuard – Deine sichere Lösung für Dateiverschlüsselung. Kostenlos, Open Source & einfach zu bedienen." />
-  <title>PrivGuard – Security made simple</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PrivGuard – Enterprise-Level Dateiverschlüsselung. Einfach, sicher, Open Source.">
+  <title>PrivGuard – Enterprise Security</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg: #0e1117;
+      --card-bg: rgba(255,255,255,0.05);
+      --card-border: rgba(255,255,255,0.08);
+      --text: #f1f1f1;
+      --subtext: #9ca3af;
+      --accent: #2563eb;
     }
+    body.light {
+      --bg: #f9fafb;
+      --card-bg: rgba(255,255,255,0.9);
+      --card-border: rgba(0,0,0,0.08);
+      --text: #111827;
+      --subtext: #4b5563;
+      --accent: #2563eb;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
     body {
-      font-family: 'Fira Code', monospace;
-      background: radial-gradient(circle at top, #0a0f1e, #000);
-      color: #d1d1d1;
-      overflow-x: hidden;
+      font-family: 'SF Pro Display', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x:hidden;
+      transition:background .4s,color .4s;
     }
+
+    /* Toggle */
+    .toggle {
+      position:absolute;top:20px;right:20px;
+      width:44px;height:44px;
+      border-radius:50%;
+      border:1px solid var(--card-border);
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;
+      background:var(--card-bg);
+      backdrop-filter:blur(10px);
+      transition:all .3s ease;
+      font-size:1.2rem;
+    }
+    .toggle:hover {transform:scale(1.1);box-shadow:0 0 12px rgba(37,99,235,0.5);}
+
+    /* Hero */
     header {
-      text-align: center;
-      padding: 80px 20px 40px;
-      animation: fadeIn 1.5s ease;
+      text-align:center;
+      padding:160px 20px 100px;
+      position:relative;
     }
     header h1 {
-      font-size: 3rem;
-      color: #00ff9c;
-      text-shadow: 0 0 15px #00ff9c, 0 0 25px #008f6e;
+      font-size:3.8rem;font-weight:700;
+      background:linear-gradient(90deg,#2563eb,#60a5fa);
+      background-clip:text;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      white-space:nowrap;overflow:hidden;border-right:.15em solid var(--accent);
+      width:0;margin:0 auto 20px;
+      animation:typing 3s steps(30,end) forwards,blink .75s step-end infinite;
     }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 15px;
-      color: #aaa;
-    }
-    .btn-download {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background: linear-gradient(45deg, #00ff9c, #008f6e);
-      color: #000;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 8px;
-      box-shadow: 0 0 15px #00ff9c;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .btn-download:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00ff9c, 0 0 45px #008f6e;
-    }
+    @keyframes typing {from{width:0}to{width:100%}}
+    @keyframes blink {50%{border-color:transparent}}
 
+    header p {
+      font-size:1.3rem;color:var(--subtext);
+      margin-bottom:40px;opacity:0;animation:fadeIn 2.5s forwards;
+    }
+    @keyframes fadeIn {to{opacity:1}}
+
+    /* Buttons */
+    .btn {
+      padding:14px 32px;border-radius:12px;font-weight:600;
+      text-decoration:none;display:inline-block;
+      position:relative;overflow:hidden;cursor:pointer;
+      margin:0 10px;transition:transform .3s,box-shadow .3s;
+    }
+    .btn-primary {
+      background:linear-gradient(90deg,#2563eb,#1d4ed8);color:#fff;
+      box-shadow:0 8px 20px rgba(37,99,235,0.4);
+    }
+    .btn-primary::before {
+      content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;
+      background:linear-gradient(120deg,transparent,rgba(255,255,255,.3),transparent);
+      transition:left .7s;
+    }
+    .btn-primary:hover::before {left:100%;}
+    .btn-primary:hover {transform:translateY(-2px) scale(1.02);}
+
+    .btn-secondary {
+      background:var(--card-bg);color:var(--text);
+      border:1px solid var(--card-border);
+    }
+    .btn-secondary:hover {background:rgba(255,255,255,0.1);}
+
+    /* Features */
     section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
-      text-align: center;
-      animation: slideUp 1.2s ease;
+      max-width:1100px;margin:0 auto;padding:80px 20px;text-align:center;
     }
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #00e6e6;
-      text-shadow: 0 0 10px #00e6e6, 0 0 20px #008f8f;
+      font-size:2.4rem;margin-bottom:15px;
+      background:linear-gradient(90deg,#60a5fa,#93c5fd);
+      background-clip:text;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
-    section p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #bbb;
-    }
+    section p {color:var(--subtext);font-size:1.1rem;margin-bottom:60px;}
+
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:40px;
     }
     .feature {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid rgba(0, 255, 156, 0.2);
-      box-shadow: 0 0 15px rgba(0, 255, 156, 0.1);
-      transition: transform 0.3s ease;
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      border-radius:16px;padding:40px;
+      backdrop-filter:blur(12px);
+      transition:all .5s ease;
+      opacity:0;transform:translateY(40px);
+      position:relative;overflow:hidden;
     }
-    .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0, 255, 156, 0.3);
+    .feature h3 {font-size:1.5rem;margin-bottom:15px;position:relative;}
+    .feature h3::after {
+      content:"";display:block;width:40px;height:3px;
+      background:var(--accent);margin:8px auto 0;
+      border-radius:2px;transform:scaleX(0);transition:.4s;
     }
-    .feature h3 {
-      margin-bottom: 10px;
-      color: #00ff9c;
-    }
+    .feature p {color:var(--subtext);font-size:1rem;line-height:1.6;}
+
+    .feature:hover {transform:translateY(-10px) scale(1.02);
+      border-color:var(--accent);box-shadow:0 0 25px rgba(37,99,235,0.3);}
+    .feature:hover h3::after {transform:scaleX(1);}
+    .feature:hover p {color:var(--text);}
+
     footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: #666;
-      font-size: 0.9rem;
+      text-align:center;padding:50px 20px;color:var(--subtext);
     }
-    footer a {
-      color: #00ff9c;
-      text-decoration: none;
+    .footer-links {
+      margin-top:20px;display:flex;justify-content:center;gap:20px;
+      flex-wrap:wrap;
     }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .footer-btn {
+      padding:10px 20px;
+      border-radius:25px;
+      border:1px solid var(--card-border);
+      background:var(--card-bg);
+      color:var(--text);
+      text-decoration:none;
+      transition:all .3s ease;
     }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Matrix Animation Background */
-    #matrix {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: black;
+    .footer-btn:hover {
+      border-color:var(--accent);
+      color:#fff;
+      background:linear-gradient(90deg,#2563eb,#1d4ed8);
+      box-shadow:0 4px 15px rgba(37,99,235,0.3);
     }
   </style>
 </head>
 <body>
-  <canvas id="matrix"></canvas>
-
+  <div class="toggle" id="mode">🌙</div>
   <header>
     <h1>PrivGuard</h1>
-    <p>Schütze deine Daten mit moderner Verschlüsselung – Open Source & frei</p>
-    <a href="https://github.com/Jaedini/PrivGuard/releases/download/v3.0.0/PrivGuard_Setup.exe" class="btn-download">⬇️ Download Installer</a>
+    <p>Enterprise-Level Dateiverschlüsselung für Windows</p>
+    <div>
+      <a href="https://github.com/Jaedini/PrivGuard/releases/download/v3.0.0/PrivGuard_Setup.exe" class="btn btn-primary">Download</a>
+      <a href="https://github.com/Jaedini/PrivGuard" class="btn btn-secondary">GitHub Repo</a>
+    </div>
   </header>
 
   <section>
-    <h2>Features</h2>
+    <h2>Warum PrivGuard?</h2>
+    <p>Minimalistisch. Sicher. Einfach. – Nur das, was wirklich zählt.</p>
     <div class="features">
       <div class="feature">
-        <h3>🔒 Starke Verschlüsselung</h3>
-        <p>Deine Dateien werden mit modernsten Algorithmen geschützt.</p>
+        <h3>Sicherheit</h3>
+        <p>AES-256 + Salt-Datei. Keine Kompromisse. Keine Backdoors.</p>
       </div>
       <div class="feature">
-        <h3>⚡ Einfache Bedienung</h3>
-        <p>Minimalistische, intuitive Oberfläche – auch für Einsteiger.</p>
+        <h3>Benutzerfreundlichkeit</h3>
+        <p>Eine klare, funktionale Oberfläche – entwickelt für einfache Bedienung ohne Ablenkung.</p>
       </div>
       <div class="feature">
-        <h3>🖥️ Log Panel</h3>
-        <p>Behalte den Überblick über alle Aktionen in Echtzeit.</p>
+        <h3>Kontrolle</h3>
+        <p>Ein eigenes Log Panel – alle Aktionen transparent im Überblick.</p>
       </div>
     </div>
   </section>
 
-  
-
   <footer>
-    <p>© 2025 PrivGuard • <a href="https://github.com/Jaedini/PrivGuard">GitHub Repo</a> • <a href="https://github.com/Jaedini/PrivGuard/blob/main/LICENSE">MIT License</a></p>
+    <p>© 2025 PrivGuard</p>
+    <div class="footer-links">
+      <a href="https://github.com/Jaedini/PrivGuard" class="footer-btn">GitHub</a>
+      <a href="https://github.com/Jaedini/PrivGuard/issues" class="footer-btn">Issues</a>
+      <a href="https://github.com/Jaedini/PrivGuard/blob/main/LICENSE" class="footer-btn">Lizenz</a>
+    </div>
   </footer>
 
-  <!-- Matrix Animation Script -->
   <script>
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
-
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const fontSize = 16;
-    const columns = canvas.width / fontSize;
-    const drops = Array.from({length: columns}).fill(1);
-
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#00ff9c";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+    /* Scroll reveal */
+    const features=document.querySelectorAll('.feature');
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.style.opacity=1;
+          e.target.style.transform="translateY(0)";
+          obs.unobserve(e.target);
         }
-        drops[i]++;
-      }
-    }
-    setInterval(draw, 33);
+      });
+    },{threshold:0.2});
+    features.forEach(f=>obs.observe(f));
+
+    /* Dark/Light Toggle */
+    const toggle=document.getElementById("mode");
+    toggle.onclick=()=>{
+      document.body.classList.toggle("light");
+      toggle.textContent=document.body.classList.contains("light")?"☀️":"🌙";
+    };
   </script>
 </body>
 </html>
-
-
-
