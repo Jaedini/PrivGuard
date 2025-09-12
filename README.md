@@ -23,7 +23,7 @@
 - AES-Verschlüsselung mit **Salt-Datei**
 - Dunkles UI mit **integriertem Log Panel**
 - Intuitive, moderne Oberfläche (PyQt)
-- Installer über **Inno Setup**
+- Installer gemacht mit **Inno Setup**
 
 ---
 
