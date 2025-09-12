@@ -38,7 +38,7 @@
 ## Release Notes
 ### v3.0.0
 - Überarbeitete GUI (Dark Mode + Log Panel)  
-- Installer via Inno Setup  
+- Installer gemacht via Inno Setup  
 - Neue Projektstruktur (src/, tests/, docs/)  
 
 ---
